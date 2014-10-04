@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-3.0.xsd
+         http://www.springframework.org/schema/mvc
+         http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+<!--  placeholder voor properties 
+	<bean id="placeholderConfig"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="WEB-INF/classes/cuvos-servlet.properties" />
+	</bean> -->
+
+	<!-- URL mapping vervangen door @RequestMapping <bean id="urlMap" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"> 
+		<property name="urlMap"> <props> <prop key="/personenlijst.htm">personenlijstController</prop> 
+		<prop key="/voegpersoontoe.htm">voegPersoonToeController</prop> </props> 
+		</property> </bean> -->
+		
+		<!--  ##### Disabled because Spring could not find hibernate.cgf.xml  ###### -->
+	<context:component-scan base-package="nl.rsvier.icaras.controller">
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+	
+	<import resource="classpath:cuvosdb-context.xml"/>    
+	
+	<mvc:annotation-driven />
+	
+	<mvc:view-controller path="/" view-name="index"/>
+	
+	
+
+	<!-- Controllers VERVANGEN DOOR BOVENSTAANDE COMPONENTSCAN EN ANNOTATION-DRIVEN
+	<bean id="urlFilenameController"
+		class="org.springframework.web.servlet.mvc.UrlFilenameViewController" />
+
+	<bean name="personenlijstController" class="nl.rsvier.cuvos.controller.PersonenlijstController">
+		<property name="persoonManager">
+			<ref bean="persoonManager" />
+		</property>
+
+		<property name="successView">
+			<value>personenlijst</value>
+		</property>
+	</bean>
+	<bean name="voegPersoonToeController" class="nl.rsvier.cuvos.controller.VoegPersoonToeController">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="commandClass">
+			<value>nl.rsvier.cuvos.model.Persoon</value>
+		</property>
+		<property name="formView">
+			<value>voegpersoontoe</value>
+		</property>
+		<property name="successView">
+			<value>redirect:personenlijst.htm</value>
+		</property>
+
+		<property name="persoonManager">
+			<ref bean="persoonManager" />
+		</property>
+	</bean>
+	-->	
+
+	<!-- Validators -->
+
+
+
+	<!-- Model classes <bean id="persoonManager" class="nl.rsvier.cuvos.model.PersoonManager" 
+		/> -->
+
+	<!-- Utility classes (applicationSecurityManager) -->
+
+
+	<!-- View Resolver -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass">
+			<value>org.springframework.web.servlet.view.JstlView</value>
+		</property>
+		<property name="prefix">
+			<value>/WEB-INF/jsp/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+
+	<!-- Spring mail support -->
+
+	<!-- Spring job scheduling -->
+
+	<!-- Spring JMX support -->
+
+	<!-- Resource Bundle (bean id="messageSource") -->
+
+</beans>

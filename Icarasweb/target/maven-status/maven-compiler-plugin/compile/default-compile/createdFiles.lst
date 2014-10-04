@@ -1,0 +1,5 @@
+nl\rsvier\icaras\dao\PersoonDaoHibernate.class
+nl\rsvier\icaras\core\Persoon.class
+nl\rsvier\icaras\controller\PersonenlijstController.class
+nl\rsvier\icaras\core\Adres.class
+nl\rsvier\icaras\dao\IPersoonDao.class

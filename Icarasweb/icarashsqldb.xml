@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+
+<project name="icarasdb">
+  <property name="hjar" value="lib/hsqldb.jar"/>
+  <property name="hclass" value="org.hsqldb.Server"/>
+  <property name="hfile" value="-database.0 data/icarasdb"/>
+  <property name="halias" value="icaras"/>
+  <property name="hport" value="9005"/>
+    
+  <target name="starthsql">
+    <java fork="true"
+          classname="${hclass}" classpath="${hjar}" 
+          args="${hfile} -dbname.0 ${halias} -port ${hport}"/>
+  </target>
+    
+	<target name="stophsql">
+			<sql classpath="${hjar}" driver="org.hsqldb.jdbcDriver" url="jdbc:hsqldb:hsql://localhost:${hport}/${halias}" userid="sa" password="" print="yes">
+		      SHUTDOWN;
+		      	</sql>
+		</target>
+
+		<target name="execddl">
+			<sql classpath="${hjar}" driver="org.hsqldb.jdbcDriver" url="jdbc:hsqldb:hsql://localhost:${hport}/${halias}" userid="sa" password="" print="yes">
+
+
+
+	INSERT INTO Persoon (PERSOONID, VOORNAAM, POSTCODE, HUISNUMMER, STRAAT, PLAATSNAAM)
+	       VALUES (default, 'Suske', '1515AA', '16', 'Stripplein', 'Amoras');
+
+	INSERT INTO Persoon (PERSOONID, VOORNAAM, POSTCODE, HUISNUMMER, STRAAT, PLAATSNAAM)
+	       VALUES (default, 'Wiske', '1515AA', '16', 'Stripplein', 'Amoras');
+
+	INSERT INTO Persoon (PERSOONID, VOORNAAM, POSTCODE, HUISNUMMER, STRAAT, PLAATSNAAM)
+	       VALUES (default, 'Jerom', '1221ZZ', '1001', 'Lariekoekstraat', 'Hilversum');
+
+	INSERT INTO Persoon (PERSOONID, VOORNAAM, POSTCODE, HUISNUMMER, STRAAT, PLAATSNAAM)
+	       VALUES (default, 'Lambik', '3500AB', '66 bis', 'Afrikanerstraat', 'Utrecht');
+
+	INSERT INTO Persoon (PERSOONID, VOORNAAM, POSTCODE, HUISNUMMER, STRAAT, PLAATSNAAM)
+	       VALUES (default, 'Tante Sidonia', '1111EE', '99 A', 'Onze lieve vrouwenlaan', 'Hilaria');
+
+	INSERT INTO Persoon (PERSOONID, VOORNAAM, POSTCODE, HUISNUMMER, STRAAT, PLAATSNAAM)
+	       VALUES (default, 'Professor Barabas', '1234AB', '27', 'Ontdekkingsweg', 'Utopia');
+
+	</sql>
+		</target>
+  
+</project>
+
+
