@@ -11,7 +11,7 @@
 	<url>http://www.rsvier.nl/icaras</url>
 
 	<modules>
-		<module>Icarasweb</module>
+		<module>Icaras</module>
 	</modules>
 
 	<dependencyManagement>
