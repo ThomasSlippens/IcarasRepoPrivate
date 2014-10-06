@@ -151,7 +151,7 @@
 	</build>
 	<parent>
 		<groupId>nl.rsvier.icaras</groupId>
-		<artifactId>Icaras</artifactId>
+		<artifactId>IcarasOntwikkelproject</artifactId>
 		<version>1</version>
 		<relativePath>..</relativePath>
 	</parent>
