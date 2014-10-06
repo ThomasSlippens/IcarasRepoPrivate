@@ -33,7 +33,7 @@
 		 <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">create</property> 
 
-		<mapping class="nl.rsvier.icaras.core.Persoon"/>
+		<mapping class="nl.rsvier.icaras.core.relatiebeheer.Persoon"/>
 		
 	</session-factory>
 </hibernate-configuration>

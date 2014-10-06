@@ -1,9 +1,22 @@
 package nl.rsvier.icaras.core.relatiebeheer;
 
+import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
+
+import nl.rsvier.icaras.core.Bedrijf;
+import nl.rsvier.icaras.core.Vacature;
+
+
+@Embeddable
 public class Aanbieding {
 
+@Embedded	
 private Vacature vacature;
+
+@Embedded
 private Persoon referentiePersoon;
+
+@Embedded
 private Bedrijf referentieBedrijf;
 
 

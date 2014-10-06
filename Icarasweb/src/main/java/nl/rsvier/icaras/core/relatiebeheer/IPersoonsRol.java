@@ -1,5 +1,8 @@
 package nl.rsvier.icaras.core.relatiebeheer;
 
-public interface IPersoonsRol extends Rol  {
+import nl.rsvier.icaras.core.Rol;
+
+
+public interface IPersoonsRol extends Rol{
 
 }
