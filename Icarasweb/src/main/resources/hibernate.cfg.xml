@@ -34,6 +34,14 @@
         <property name="hbm2ddl.auto">create</property> 
 
 		<mapping class="nl.rsvier.icaras.core.relatiebeheer.Persoon"/>
+		<mapping class="nl.rsvier.icaras.core.relatiebeheer.Aanbieding"/>
+		<mapping class="nl.rsvier.icaras.core.relatiebeheer.Arbeidsovereenkomst"/>
+		<mapping class="nl.rsvier.icaras.core.relatiebeheer.CvGenerator"/>
+		<mapping class="nl.rsvier.icaras.core.relatiebeheer.Kandidaat"/>
+		<mapping class="nl.rsvier.icaras.core.relatiebeheer.Werknemer"/>
+		<mapping class="nl.rsvier.icaras.core.Bedrijf"/>
+		<mapping class="nl.rsvier.icaras.core.Relatie"/>
+		<mapping class="nl.rsvier.icaras.core.Vacature"/>
 		
 	</session-factory>
 </hibernate-configuration>

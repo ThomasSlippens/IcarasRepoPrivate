@@ -1,18 +1,34 @@
 package nl.rsvier.icaras.core.relatiebeheer;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 import nl.rsvier.icaras.core.Bedrijf;
 
-@Embeddable
+@Entity
 public class Arbeidsovereenkomst {
 	
-	@Embedded
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int arbeidsovereenkomstId;
+	
+	@OneToOne
+	@JoinColumn (nullable = false)
 	private Bedrijf referentieBedrijf;
-	@Embedded
+	
+	@OneToOne
+	@JoinColumn (nullable = false)
 	private Persoon referentiePersoon;
-	@Embedded
+	
+	@OneToOne
+	@JoinColumn (nullable = false)
 	private Aanbieding referentieAanbieding;
 	
 
